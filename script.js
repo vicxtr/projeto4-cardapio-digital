@@ -83,6 +83,8 @@ if (escolha1 === 5) {
             }
             
             let valorTotal = valor1 + valor2 + valor3
+
+            
             if (perguntaEstudante === "s" && valorTotal > 50) {
                 let descontoEstudante = (valorTotal * 10) / 100
                 let descontoNormal = (valorTotal * 5) / 100
@@ -95,7 +97,7 @@ if (escolha1 === 5) {
     - ${escolha3} de R$${valor3.toFixed(2)}
     Total sem desconto: R$${valorTotal.toFixed(2)}
     Total com desconto: R$${final1.toFixed(2)}`)
-            } else if (perguntaEstudante === "s" && valorTotal < 50) {
+            } else if (perguntaEstudante === "s" && valorTotal === 50) {
                 let descontoEstudante = (valorTotal * 10) / 100
                 let final2 = valorTotal - descontoEstudante
                 alert(`
@@ -106,10 +108,10 @@ if (escolha1 === 5) {
     - ${escolha3} de R$${valor3.toFixed(2)}
     Total sem desconto: R$${valorTotal.toFixed(2)}
     Total com desconto: R$${final2.toFixed(2)}`)
-            } else if (perguntaEstudante === "n" && valorTotal > 50) {
-                let descontoNormal = (valorTotal * 5) / 100
-                let final3 = valorTotal - descontoNormal
-                alert(` 
+            } else if (perguntaEstudante === "s" && valorTotal < 50) {
+                let descontoEstudante = (valorTotal * 10) / 100
+                let final3 = valorTotal - descontoEstudante
+                alert(`
     Obrigado pela preferencia ${nome}!
     Pratos escolhidos:
     - ${escolha1} de R$${valor1.toFixed(2)}
@@ -117,18 +119,39 @@ if (escolha1 === 5) {
     - ${escolha3} de R$${valor3.toFixed(2)}
     Total sem desconto: R$${valorTotal.toFixed(2)}
     Total com desconto: R$${final3.toFixed(2)}`)
-            } else if (perguntaEstudante === "n" && valorTotal < 50) {
-                let final4 = valorTotal
-                alert(`
+            } else if (perguntaEstudante === "n" && valorTotal > 50) {
+                let descontoNormal = (valorTotal * 5) / 100
+                let final4 = valorTotal - descontoNormal
+                alert(` 
     Obrigado pela preferencia ${nome}!
-    Pratos escolhidos
-
+    Pratos escolhidos:
     - ${escolha1} de R$${valor1.toFixed(2)}
     - ${escolha2} de R$${valor2.toFixed(2)}
     - ${escolha3} de R$${valor3.toFixed(2)}
     Total sem desconto: R$${valorTotal.toFixed(2)}
     Total com desconto: R$${final4.toFixed(2)}`)
+            } else if (perguntaEstudante === "n" && valorTotal === 50) {
+                let final5 = valorTotal
+                alert(`
+    Obrigado pela preferencia ${nome}!
+    Pratos escolhidos:
+    - ${escolha1} de R$${valor1.toFixed(2)}
+    - ${escolha2} de R$${valor2.toFixed(2)}
+    - ${escolha3} de R$${valor3.toFixed(2)}
+    Total sem desconto: R$${valorTotal.toFixed(2)}
+    Total com desconto: R$${final5.toFixed(2)}`)
+            } else if (perguntaEstudante === "n" && valorTotal < 50) {
+                let final6 = valorTotal
+                alert(`
+    Obrigado pela preferencia ${nome}!
+    Pratos escolhidos:
+    - ${escolha1} de R$${valor1.toFixed(2)}
+    - ${escolha2} de R$${valor2.toFixed(2)}
+    - ${escolha3} de R$${valor3.toFixed(2)}
+    Total sem desconto: R$${valorTotal.toFixed(2)}
+    Total com desconto: R$${final6.toFixed(2)}`)
             }
         }
     }
-} 
+}
+ 
